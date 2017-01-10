@@ -59,7 +59,8 @@
 
 <script>
     function playSound(e){
-      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`); 
+      // 查阅stackoverflow才明白``的用法ES6的语法
       const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
       if(!audio) return; // null 返回
       key.classList.add("playing")

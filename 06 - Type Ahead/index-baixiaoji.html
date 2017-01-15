@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead 👀</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="诗句 诗人 诗名">
+    <ul class="suggestions">
+      <li>输入诗句，找一首诗</li>
+      <li></li>
+    </ul>
+  </form>
+<script>
+// const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+  const endpoint = 'https://gist.githubusercontent.com/soyaine/81399bb2b24ca1bb5313e1985533c640/raw/bdf7df2cbcf70706c4a5e51a7dfb8c933ed78878/TangPoetry.json';
+  var poems = [];
+  fetch(endpoint)
+            .then(poemData =>  poemData.json() )
+            .then(data => poems.push(...data));  
+            // push ES6 用法 
+
+  function findMatch(keyword,poems){
+    return poems.filter(poet => {
+        const reg = new RegExp(keyword,"ig");
+        const author = poet.detail_author.join("");
+
+        return poet.detail_text.match(reg) ||   poet.title.match(reg) || author.match(reg);
+    });
+  }
+
+  function displayPoem(){
+     // console.log(this.value);
+     const data = findMatch(this.value,poems)
+
+     const html = data.map(poet => {
+                  const reg2 = new RegExp(this.value,"ig")
+                  const text = poet.detail_text.replace(reg2,`<span class="hl">${this.value}</span>`)
+                  const title = poet.title.replace(reg2,`<span class="hl">${this.value}</span>`)
+                  const author = poet.detail_author[0].replace(reg2,`<span class="hl">${this.value}</span>`)
+                  return `
+                      <li><span class="poem">${text}</span>
+                          <span class="title">${title}-${author}</span>
+                      </li>
+                  `
+               }).join("");
+     wrap.innerHTML = html;
+  }
+
+  const searchInput = document.querySelector(".search");
+  const wrap = document.querySelector(".suggestions");
+
+  searchInput.addEventListener("change",displayPoem);
+  searchInput.addEventListener("keyup",displayPoem);
+</script>
+  </body>
+</html>

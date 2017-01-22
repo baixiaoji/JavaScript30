@@ -105,13 +105,16 @@
 
 <script>
     const  checkboxs = document.querySelectorAll(".item input[type='checkbox']");
+
     let lastCheck ;
     function handleCheck(e){
       let isBetween = false;
-      console.log(e)
+      // 控制shift键的使用
       if(e.shiftKey && this.checked){
+        //遍历这个nodelist
         checkboxs.forEach(checkbox => {
           console.log(checkbox)
+          //找到其中所有的checkbox，根据改变isBetween来选中
           if(checkbox === this || checkbox === lastCheck){
             isBetween = !isBetween;
             console.log("start between")
@@ -122,6 +125,7 @@
           }
         });
       }
+      //记住上一次的checkbox
       lastCheck = this;
     }
     checkboxs.forEach(checkbox => checkbox.addEventListener("click",handleCheck));

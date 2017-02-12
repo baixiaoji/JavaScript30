@@ -22,6 +22,11 @@ function updateButton(){
 function skip(){
     video.currentTime += parseFloat(this.dataset.skip)
 }
+/* 设置音量 & 播放速度 */
+function handleRangeUpdate(){
+    video[this.name] = this.value;
+}
+
 
 
 
@@ -32,3 +37,5 @@ video.addEventListener("pause",updateButton);
 
 toggle.addEventListener("click",togglePlay);
 buttons.forEach(button => button.addEventListener("click",skip))
+ranges.forEach(range => range.addEventListener("change",handleRangeUpdate))
+ranges.forEach(range => range.addEventListener("mousemove",handleRangeUpdate))

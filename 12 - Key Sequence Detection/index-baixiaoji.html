@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+<script>
+/*
+   Konami Code
+   wikipedia https://en.wikipedia.org/wiki/Konami_Code
+   视频彩蛋： www.buzzfeed.com
+ */
+const press = [];
+const secretCode = "baixiaoji"
+window.addEventListener("keyup",(e)=>{
+  console.log(e.key)
+  press.push(e.key)
+  press.splice(-secretCode.length-1 , press.length - secretCode.length)
+  if(press.join("").includes(secretCode)){
+      console.log("DING DING！")
+      cornify_add();
+  }
+  console.log(press)
+})
+</script>
+</body>
+</html>

@@ -8,16 +8,29 @@
 
   <script>
     // start with strings, numbers and booleans
+    // let str = "baiji";
+    // let str2 = str;
+    // console.log(str,str2);
+    // str2 = "baixiaoji";
+    // console.log(str,str2)
 
+    // let num = 2;
+    // let num2 = num;
+    // console.log(num,num2);
+    // num2 = 10;
+    // console.log(num,num2)
     // Let's say we have an array
     const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
 
     // and we want to make a copy of it.
+    // const captain = players;
+    // console.log(players,captain);
 
     // You might think we can just do something like this:
+    // captain[3] = "baixiaoji"
 
     // however what happens when we update that array?
-
+    // console.log(players,captain)
     // now here is the problem!
 
     // oh no - we have edited the original array too!
@@ -25,13 +38,18 @@
     // Why? It's because that is an array reference, not an array copy. They both point to the same array!
 
     // So, how do we fix this? We take a copy instead!
-
+    const cap2 = players.slice();   // 需要查查 数组的方法 slice & splice so on的用法
+    console.log(cap2);
+    console.log(cap2 === players);
     // one day
 
     // or create a new array and concat the old one in
-
+    const cap3 = [].concat(players)
+    console.log(cap3 === players)
     // or use the new ES6 Spread
-
+    const cap4 = [...players]
+    console.clear();
+    console.log(cap4 === players)
     // now when we update it, the original one isn't changed
 
     // The same thing goes for objects, let's say we have a person object

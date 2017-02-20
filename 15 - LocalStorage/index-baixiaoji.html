@@ -29,6 +29,38 @@
   const addItems = document.querySelector('.add-items');
   const itemsList = document.querySelector('.plates');
   const items = [];
+  /*
+    1. 先拿到 input的value
+    2. 拼接字符串放在 itemsList里
+    3. 存储在localStorage里面
+    4. 设置 checked 的记录 设计事件委托
+  */
+  function setItems(e){
+    e.preventDefault();
+    const text = this.querySelector("[name=item]").value;
+    const item = {
+      text,
+      done:false
+    }
+    // console.log(item)
+    items.push( item );
+    setList(items,itemsList)
+    this.reset();
+  }
+
+  function setList(items =[],platesList){
+    platesList.innerHTML = items.map((item,i) => {
+      return `
+        <li>
+          <input type="checkbox" data-index=${i} id="item${i}">
+          <label for="item${i}">${item.text}</label>
+        </li>
+      `;
+    }).join("");
+  }
+
+  addItems.addEventListener("submit",setItems)
+
 
 </script>
 

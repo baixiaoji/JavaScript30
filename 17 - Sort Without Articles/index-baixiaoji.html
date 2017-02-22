@@ -61,7 +61,7 @@
     //       return -1;
     //     }
     // });
-    //ES 6 
+    //ES 6  对照看上面的代码
     const sortBands = bands.sort((a,b) => strip(a)>strip(b)?1:-1);
     document.querySelector("#bands").innerHTML = 
                         sortBands.map(band => `<li>${band}</li>`)

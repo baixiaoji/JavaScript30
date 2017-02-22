@@ -2,10 +2,10 @@
 文字描述还没有去写，等完成挑战时候在回顾以及汉化
 
 ------------------
-推荐看`baixiaoji`结尾的代码，上面一些有一定的注释点。如有问题可以写在`Issues`里面
+推荐看`baixiaoji`结尾的代码，上面一些有一定的注释点👍👍。如有问题可以写在`Issues`里面
 
 ----------------------
-1. [x] [JavaScript Drum Kit  指南](https://baixiaoji.github.io/JavaScript30/01%20-%20JavaScript%20Drum%20Kit/index-baixiaoji.html) 
+ 1. [x] [JavaScript Drum Kit  指南](https://baixiaoji.github.io/JavaScript30/01%20-%20JavaScript%20Drum%20Kit/index-baixiaoji.html) 
 2. [x] [JS + CSS Clock 指南](https://baixiaoji.github.io/JavaScript30/02 - JS + CSS Clock/index-baixiaoji.html) 
 3. [x] [CSS Variables 指南](https://baixiaoji.github.io/JavaScript30/03 - CSS Variables/index-baixiaoji.html) 
 4. [x] [Array Cardio, Day 1 指南](https://baixiaoji.github.io/JavaScript30/04 - Array Cardio Day 1/index-baixiaoji.html)

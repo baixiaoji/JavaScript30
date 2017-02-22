@@ -5,7 +5,7 @@
 推荐看`baixiaoji`结尾的代码，上面一些有一定的注释点。如有问题可以写在`Issues`里面
 
 ----------------------
-1. [x] [JavaScript Drum Kit  指南]() 
+1. [x] [JavaScript Drum Kit  指南](https://baixiaoji.github.io/JavaScript30/01%20-%20JavaScript%20Drum%20Kit/index-baixiaoji.html) 
 2. [x] [JS + CSS Clock 指南]() 
 3. [x] [CSS Variables 指南]() 
 4. [x] [Array Cardio, Day 1 指南]()

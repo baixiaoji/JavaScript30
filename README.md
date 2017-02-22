@@ -6,23 +6,23 @@
 
 ----------------------
 1. [x] [JavaScript Drum Kit  指南](https://baixiaoji.github.io/JavaScript30/01%20-%20JavaScript%20Drum%20Kit/index-baixiaoji.html) 
-2. [x] [JS + CSS Clock 指南]() 
-3. [x] [CSS Variables 指南]() 
-4. [x] [Array Cardio, Day 1 指南]()
-5. [x] [Flex Panel Gallery 指南]()
-6. [x] [Type Ahead 指南]()
-7. [x] [Array Cardio, Day 2 指南]()
-8. [x] [Fun with HTML5 Canvas 指南]() 
-9. [x] [Dev Tools Domination 指南]()
-10. [x] [Hold Shift and Check Checkboxes 指南]()
-11. [x] Custom Video Player
-12. [x] Key Sequence Detection
-13. [x] Slide in on Scroll
-14. [x] JavaScript References vs. Copying
-15. [X] LocalStorage
-16. [x] Mouse Move Shadow
-17. [x] Sort Without Articles
-18. [x] Adding Up Times with Reduce
+2. [x] [JS + CSS Clock 指南](https://baixiaoji.github.io/JavaScript30/02 - JS + CSS Clock/index-baixiaoji.html) 
+3. [x] [CSS Variables 指南](https://baixiaoji.github.io/JavaScript30/) 
+4. [x] [Array Cardio, Day 1 指南](https://baixiaoji.github.io/JavaScript30/)
+5. [x] [Flex Panel Gallery 指南](https://baixiaoji.github.io/JavaScript30/)
+6. [x] [Type Ahead 指南](https://baixiaoji.github.io/JavaScript30/)
+7. [x] [Array Cardio, Day 2 指南](https://baixiaoji.github.io/JavaScript30/)
+8. [x] [Fun with HTML5 Canvas 指南](https://baixiaoji.github.io/JavaScript30/) 
+9. [x] [Dev Tools Domination 指南](https://baixiaoji.github.io/JavaScript30/)
+10. [x] [Hold Shift and Check Checkboxes 指南](https://baixiaoji.github.io/JavaScript30/)
+11. [x] [Custom Video Player](https://baixiaoji.github.io/JavaScript30/)
+12. [x] [Key Sequence Detection](https://baixiaoji.github.io/JavaScript30/)
+13. [x] [Slide in on Scroll](https://baixiaoji.github.io/JavaScript30/)
+14. [x] [JavaScript References vs. Copying](https://baixiaoji.github.io/JavaScript30/)
+15. [X] [LocalStorage](https://baixiaoji.github.io/JavaScript30/)
+16. [x] [Mouse Move Shadow](https://baixiaoji.github.io/JavaScript30/)
+17. [x] [Sort Without Articles](https://baixiaoji.github.io/JavaScript30/)
+18. [x] [Adding Up Times with Reduce](https://baixiaoji.github.io/JavaScript30/)
 19. [ ] Webcam Fun
 20. [ ] Speech Detection
 21. [ ] Geolocation

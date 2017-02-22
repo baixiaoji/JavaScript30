@@ -43,12 +43,30 @@
   <ul id="bands"></ul>
 
 <script>
-const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
-/*
-  立一个小目标：将数组 bands 按照排序放在 #hands中
-  1. 排序 bands 数组
-  2. 在#hand比赛显示
-*/
+    const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
+    /*
+      立一个小目标：将数组 bands 按照排序放在 #hands中
+      1. 排序 bands 数组
+      2. 在#hand比赛显示
+    */
+    // 需要特殊比较 a 、 an 、 the 开头的字符串
+    function strip(bandsName){
+      return bandsName.replace(/^(a | an | the)/i,"").trim();
+    }
+    // ES5
+    // const sortBands = bands.sort(function(a,b){  // sort函数是一个有意思的函数
+    //     if(strip(a) > strip(b) ){
+    //       return 1;
+    //     }else{
+    //       return -1;
+    //     }
+    // });
+    //ES 6 
+    const sortBands = bands.sort((a,b) => strip(a)>strip(b)?1:-1);
+    document.querySelector("#bands").innerHTML = 
+                        sortBands.map(band => `<li>${band}</li>`)
+                        .join("")
+    console.log(sortBands)
 
 </script>
 

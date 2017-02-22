@@ -182,15 +182,31 @@
     </li>
   </ul>
 <script>
- /*
-   goal : 计算所有时间的和
-   1. 获取所有的 dataTime元素的 dateset
-   2. 使用数组的方法 把数值加起来
-   3. 分别计算 时 分 秒
- */
+    /*
+      goal : 计算所有时间的和
+      1. 获取所有的 dataTime元素的 dateset
+      2. 使用数组的方法 把数值加起来
+      3. 分别计算 时 分 秒
+    */
 
- const seconds = doucument.querySelector("[data-time]")
- 
+    const items = document.querySelectorAll("[data-time]")
+    const seconds = Array.from(items)
+                    .map(item => item.dataset.time)
+                    .map(timeCode => {
+                      const [mins,secs] = timeCode.split(":").map(parseFloat); 
+                      //为什么要parseFloat 字符串与数字的区别
+                      return mins*60 + secs;
+                    })
+                    .reduce((total,viSecond)=>total+viSecond);
+   
+   //3. 
+    let secondLeft = seconds;
+    const hours = Math.floor(secondLeft / 3600);
+  // 取模 是一件好东西
+          secondLeft = secondLeft % 3600;
+    const mins = Math.floor(secondLeft / 60);
+          secondLeft = secondLeft % 60;
+    console.log(hours,mins,secondLeft)
 </script>
 </body>
 </html>

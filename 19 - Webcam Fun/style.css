@@ -59,6 +59,8 @@ html {
 .strip a:nth-child(5n+5) img { rotate: 12deg; }
 /*add css*/
 .strip a{
+  display: inline-block;
+  text-decoration: none;
   text-align:center;
 }
 .strip a .tip{

@@ -27,7 +27,13 @@ function paintToCanvas(){
 
     return setInterval(()=>{
         ctx.drawImage(video,0,0,width,height);
-        const pixwls = ctx.getImageData(0,0,width,height)
+        // 获像素
+        let pixels = ctx.getImageData(0,0,width,height);
+        // pixels = redEffect(pixels);
+        pixels = rgbSplit(pixels);
+        ctx.globalAlpha = 0.8;
+
+        ctx.putImageData(pixels,0,0)
     },16)
 }
 // screenshot
@@ -42,6 +48,28 @@ function takePhoto(){
     link.setAttribute("download","handsome")
     link.innerHTML = `<img src="${data}" alt="Handsome Man">`
     strip.insertBefore(link,strip.firstChild)
+}
+
+function redEffect(pixels){
+    for(let i = 0; i < pixels.data.length;i+=4){
+        pixels.data[i + 0] = pixels.data[i + 0] + 100; // red
+        pixels.data[i + 1] = pixels.data[i + 1] -50; //green
+        pixels.data[i + 2] = pixels.data[i + 2] *0.5; //blue
+    }
+    return pixels;
+}
+
+function rgbSplit(pixels){
+    for(let i = 0; i < pixels.data.length;i+=4){
+        pixels.data[i - 150] = pixels.data[i + 0]; // red
+        pixels.data[i + 500] = pixels.data[i + 1]; //green
+        pixels.data[i - 550] = pixels.data[i + 2]; //blue
+    }
+    return pixels;
+}
+// 不能理解
+function greenScreen(pixels){
+    
 }
 
 getVideo();

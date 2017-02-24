@@ -57,3 +57,10 @@ html {
 .strip a:nth-child(5n+3) img { rotate: 8deg; }
 .strip a:nth-child(5n+4) img { rotate: -11deg; }
 .strip a:nth-child(5n+5) img { rotate: 12deg; }
+/*add css*/
+.strip a{
+  text-align:center;
+}
+.strip a .tip{
+  margin-top: -25px;
+}

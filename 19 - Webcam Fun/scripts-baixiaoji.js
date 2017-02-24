@@ -29,10 +29,13 @@ function paintToCanvas(){
         ctx.drawImage(video,0,0,width,height);
         // 获像素
         let pixels = ctx.getImageData(0,0,width,height);
-        // pixels = redEffect(pixels);
-        pixels = rgbSplit(pixels);
-        ctx.globalAlpha = 0.8;
-
+       // 打乱像素
+        pixels = redEffect(pixels);
+        // 分离
+        // pixels = rgbSplit(pixels);
+        // ctx.globalAlpha = 0.8;
+        // 不能理解
+        // pixels = greenScreen(pixels);
         ctx.putImageData(pixels,0,0)
     },16)
 }
@@ -46,7 +49,7 @@ function takePhoto(){
     const link = document.createElement("a");
     link.href = data;
     link.setAttribute("download","handsome")
-    link.innerHTML = `<img src="${data}" alt="Handsome Man">`
+    link.innerHTML = `<img src="${data}" alt="Handsome Man"><div class="tip">点击下载</div>`
     strip.insertBefore(link,strip.firstChild)
 }
 
@@ -69,7 +72,30 @@ function rgbSplit(pixels){
 }
 // 不能理解
 function greenScreen(pixels){
-    
+    const levels = {};
+
+  document.querySelectorAll('.rgb input').forEach((input) => {
+    levels[input.name] = input.value;
+  });
+
+  for (i = 0; i < pixels.data.length; i = i + 4) {
+    red = pixels.data[i + 0];
+    green = pixels.data[i + 1];
+    blue = pixels.data[i + 2];
+    alpha = pixels.data[i + 3];
+
+    if (red >= levels.rmin
+      && green >= levels.gmin
+      && blue >= levels.bmin
+      && red <= levels.rmax
+      && green <= levels.gmax
+      && blue <= levels.bmax) {
+      // take it out!
+      pixels.data[i + 3] = 0;
+    }
+  }
+
+  return pixels;
 }
 
 getVideo();

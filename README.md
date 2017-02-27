@@ -25,7 +25,7 @@
 18. [x] [Adding Up Times with Reduce](https://baixiaoji.github.io/JavaScript30/18 - Adding Up Times with Reduce/index-baixiaoji.html)
 19. [x] [Webcam Fun](https://baixiaoji.github.io/JavaScript30/19%20-%20Webcam%20Fun/index.html)
 20. [x] [Speech Detection](https://baixiaoji.github.io/JavaScript30/20 - Speech Detection/index-baixiaoji.html)
-21. [ ] Geolocation
+21. [x] [Geolocation](https://baixiaoji.github.io/JavaScript30/21 - Geolocation/index-baixiaoji.html)
 22. [ ] Follow Along Link Highlighter
 23. [ ] Speech Synthesis
 24. [ ] Sticky Nav

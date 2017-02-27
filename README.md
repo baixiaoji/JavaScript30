@@ -26,7 +26,7 @@
 19. [x] [Webcam Fun](https://baixiaoji.github.io/JavaScript30/19%20-%20Webcam%20Fun/index.html)
 20. [x] [Speech Detection](https://baixiaoji.github.io/JavaScript30/20 - Speech Detection/index-baixiaoji.html)
 21. [x] [Geolocation](https://baixiaoji.github.io/JavaScript30/21 - Geolocation/index-baixiaoji.html)
-22. [ ] Follow Along Link Highlighter
+22. [x] [Follow Along Link Highlighter](https://baixiaoji.github.io/JavaScript30/22 - Follow Along Link Highlighter/index-baixiaoji.html)
 23. [ ] Speech Synthesis
 24. [ ] Sticky Nav
 25. [ ] Event Capture, Propagation, Bubbling, and Once

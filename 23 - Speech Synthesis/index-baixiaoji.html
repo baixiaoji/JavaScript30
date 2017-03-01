@@ -22,13 +22,14 @@
       <label for="pitch">Pitch:</label>
 
       <input name="pitch" type="range" min="0" max="2" step="0.1">
-      <textarea name="text">Hello! I love JavaScript 👍</textarea>
+      <textarea name="text">Hello! I love ZouZou,Thank you!</textarea>
       <button id="stop">Stop!</button>
       <button id="speak">Speak</button>
 
     </div>
 
 <script>
+  "strict mode"
   const msg = new SpeechSynthesisUtterance();
   let voices = [];
   const voicesDropdown = document.querySelector('[name="voice"]');
@@ -41,7 +42,37 @@
     2. 设置声音select
     3. option的设置
   */
+   msg.text = document.querySelector("[name='text']").value;
 
+   function populateVoices(){
+      //获取声音
+      voices = this.getVoices();
+      voicesDropdown.innerHTML = voices
+          .map(voice => `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`)
+          .join("");
+   }
+
+   function setVoice(){
+      msg.voice = voices.find(voice => voice.name === this.value);
+      toggle();
+   }
+
+   function toggle(isTrue = true){
+     speechSynthesis.cancel();
+     if(isTrue){
+      speechSynthesis.speak(msg);
+     }
+   }
+
+   function setOption(){
+      msg[this.name] = this.value;
+      toggle();
+   }
+   speechSynthesis.addEventListener("voiceschanged",populateVoices)
+   voicesDropdown/addEventListener("change",setVoice)
+   options.forEach(option => option.addEventListener('change', setOption));
+   speakButton.addEventListener('click', toggle);
+   stopButton.addEventListener('click', () => toggle(false));
 </script>
 
 </body>

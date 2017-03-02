@@ -35,11 +35,40 @@
   </div>
 
 <script>
-/*
-    1. 选定元素、绑定down up move leave
-    2. 计算方向，计算移动的值
-*/
+    /*
+        1. 选定元素、绑定down up move leave
+        2. 计算方向，计算移动的值
+    */
+    
+    const slider = document.querySelector(".items")
+    let isdown = false;
+    let startX ;
+    let scrollLeft;
+    slider.addEventListener("mousedown",(e) => {
+        isdown = true;
+        startX = e.pageX - slider.offsetLeft;
+        slider.classList.add("active")
+        scrollLeft = slider.scrollLeft;
+    })
+    slider.addEventListener("mouseup",() => {
+        isdown = false;
+        slider.classList.remove("active")
 
+    })
+    slider.addEventListener("mouseleave",() => {
+        isdown = false;
+        slider.classList.remove("active")
+
+    })
+    slider.addEventListener("mousemove",(e) => {
+        if(!isdown) return;
+
+        let x = e.pageX - slider.offsetLeft;
+
+        const move = x - startX;
+
+        slider.scrollLeft = scrollLeft - move;
+    })
 </script>
 
   </body>

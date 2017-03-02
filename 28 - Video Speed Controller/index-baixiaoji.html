@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Speed Scrubber</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="wrapper">
+    <video class="flex" width="765" height="430" src="https://www.dropbox.com/s/nf6jfkwck1glsyo/12%20-%20flex-wrapping-and-columns.mp4?dl=1" loop controls></video>
+    <div class="speed">
+      <div class="speed-bar">1×</div>
+    </div>
+  </div>
+
+<script>
+	var video = document.querySelector(".flex")
+	var speed = document.querySelector(".speed")
+	var bar = document.querySelector(".speed-bar")
+	speed.addEventListener("mousemove",function(e){
+      var y = e.pageY - this.offsetTop;
+		// console.log(y)
+	  var percent = y / this.offsetHeight;
+      var min = 0.4;
+      var max = 4;
+      var height = Math.round(percent * 100) + '%';
+      var playbackRate = percent * (max - min) + min;
+      // chrome 47 有一个不能 
+      bar.style.height = height;
+      bar.textContent = playbackRate.toFixed(2) + '×';
+		video.playbackRate = playbackRate;
+	})
+</script>
+</body>
+</html>

@@ -15,17 +15,17 @@
   </div>
 
 <script>
-	var video = document.querySelector(".flex")
-	var speed = document.querySelector(".speed")
-	var bar = document.querySelector(".speed-bar")
+	const video = document.querySelector(".flex")
+	const speed = document.querySelector(".speed")
+	const bar = document.querySelector(".speed-bar")
 	speed.addEventListener("mousemove",function(e){
-      var y = e.pageY - this.offsetTop;
+      const y = e.pageY - this.offsetTop;
 		// console.log(y)
-	  var percent = y / this.offsetHeight;
-      var min = 0.4;
-      var max = 4;
-      var height = Math.round(percent * 100) + '%';
-      var playbackRate = percent * (max - min) + min;
+	  const percent = y / this.offsetHeight;
+      const min = 0.4;
+      const max = 4;
+      const height = Math.round(percent * 100) + '%';
+      const playbackRate = percent * (max - min) + min;
       // chrome 47 有一个不能 
       bar.style.height = height;
       bar.textContent = playbackRate.toFixed(2) + '×';

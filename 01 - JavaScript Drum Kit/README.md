@@ -2,7 +2,7 @@
 
 > 作者：© [白霁baixiaoji](https://github.com/baixiaoji)
 > 
-> > 简介：[JavaScript30](https://javascript30.com) 是 [Wes Bos](https://github.com/wesbos) 推出的一个 30 天挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。目的是帮助人们用纯 JavaScript 来写东西，不借助框架和库，也不使用编译器和引用。笔者是完成30天项目后，开始写这一系列的指南，现在你看到的是第 1 篇。完整指南在 [GitHub](https://github.com/baixiaoji/JavaScript30)，喜欢请 Star 哦♪(^∇^*)
+> 简介：[JavaScript30](https://javascript30.com) 是 [Wes Bos](https://github.com/wesbos) 推出的一个 30 天挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。目的是帮助人们用纯 JavaScript 来写东西，不借助框架和库，也不使用编译器和引用。笔者是完成30天项目后，开始写这一系列的指南，现在你看到的是第 1 篇。完整指南在 [GitHub](https://github.com/baixiaoji/JavaScript30)，喜欢请 Star 哦♪(^∇^*)
 
 ## 实现效果
 

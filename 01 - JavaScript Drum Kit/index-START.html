@@ -58,6 +58,26 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
+  /**
+   * 1. 全局监听keydown事件
+   * 2. 给对应的东西加类  播放音频
+   * 3. 结束的是再去掉
+   * */
+  function handleKey(e){
+    const item = document.querySelector(`div[data-key="${e.keyCode}"]`)
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+    item.classList.add("playing")
+    audio.currentTime = 0
+    audio.play()
+
+  }
+  function removeStyle(e){
+    if(e.propertyName !== "transform") return
+    e.target.classList.remove("playing")
+  }
+  const keys = document.querySelectorAll(`div[data-key]`)
+  keys.forEach(key => key.addEventListener('transitionend',removeStyle))
+  window.addEventListener("keydown",handleKey)
 
 </script>
 
